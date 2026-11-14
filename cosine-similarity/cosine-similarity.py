@@ -4,13 +4,14 @@ def cosine_similarity(a: list, b: list) -> float:
     """
     Returns the cosine similarity as a Python float.
     """
-    # Write code here
-    a = np.asarray(a)
-    b = np.asarray(b)
+    a = np.asarray(a, dtype=float)
+    b = np.asarray(b, dtype=float)
+
     
     a_norm = np.linalg.norm(a)
     b_norm = np.linalg.norm(b)
-    if a_norm  == 0 or b_norm == 0:
+
+    if a_norm == 0 or b_norm == 0:
         return 0.0
-        
-    return ((a @ b) / (a_norm * b_norm)).item()
+
+    return ((a @ b)/(a_norm * b_norm)).item()
